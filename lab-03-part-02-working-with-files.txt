@@ -36,7 +36,8 @@ $ touch foo.txt
 $ ls
 Copy and paste the output below.
 ----------
-books		logs		my_files	web
+foo.txt
+
 
 
 ==========
@@ -52,11 +53,8 @@ $ touch bar.txt
 
 Copy and paste the output below.
 ----------
--rw-r--r--    1 student  staff     0 Sep 14 11:18 bar.txt
-drwxr-xr-x    4 student  staff   136 Feb 13  2013 books
-drwxr-xr-x  129 student  staff  4386 Sep 14 10:37 logs
--rw-r--r--    1 student  staff     0 Sep 14 11:18 my_files
-drwxr-xr-x    6 student  staff   204 Feb 13  2013 web
+rw-r--r--  1 student  staff  0 Sep 14 11:33 bar.txt
+-rw-r--r--  1 student  staff  0 Sep 14 11:32 foo.txt
 
 
 ==========
@@ -65,6 +63,8 @@ drwxr-xr-x    6 student  staff   204 Feb 13  2013 web
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
+cp bar.txt baz.txt
+bar.txt	baz.txt	foo.txt
 
 
 
@@ -73,14 +73,17 @@ Write the command that you used to copy the file.  Additionally, copy and paste 
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+rm bar.txt
+baz.txt	foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
-
-
+ mv foo.txt qux.txt
+baz.txt	qux.txt
 
 ==========
 12. Go up one directory so that you're in ~/mtec1003-lab-03.
@@ -95,14 +98,15 @@ Write the command that you used to move the file.  Copy and paste the output of 
 Write out the command that you used and what happened.
 ----------
 
-
-
+rmdir my_files
+rmdir: my_files: Directory not empty
 ==========
 14. Try removing the directory called my_files using rm.
 
 Write out the command that you used and what happened.
 ----------
-
+rm my_files
+rm: my_files: is a directory
 
 
 ==========
@@ -124,7 +128,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
+I am able to read the page 1232 of the book in that directory
 
 
 ==========
@@ -136,7 +140,8 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
-
+head books/other/pg1232.txt
+Title: The Prince
 
 
 ==========
@@ -148,7 +153,8 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below.
 ----------
-
+tail head books/other/pg1232.txt
+subscribe to our email newsletter to hear about new eBooks.
 
 
 ==========
@@ -160,7 +166,11 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
+less books/other/pg1232.txt
+More books/other/pg1232.txt
 
+space scrolls 
+q brings back the prompt 
 
 
 ==========
@@ -168,19 +178,23 @@ Write the command that you used below.  Describe what spacebar and q does after 
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
+I would use less when i dont want to read the entire file
+more: when i need to see more of the file or looking for something
+cat : when i need to see all the content
+tail: when i need to see the just the end of the file
+head: when i only need to see the beginning 
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
-
+52639 wc books/other/pg1232.txt
 
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
-
+ 5063  wc -l books/other/pg1232.txt
 
 ==========
 OPTIONAL
@@ -189,3 +203,4 @@ OPTIONAL
 
 Write the command that you used below.
 ----------
+mv books/other/pg1232.txt
