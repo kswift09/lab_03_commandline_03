@@ -135,7 +135,7 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+nano test 
 
 ==========
 14. Verify that a backup folder was created in your test directory... with copies of the files present.
